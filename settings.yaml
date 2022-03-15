@@ -1,5 +1,5 @@
 SECRET_KEY: ""
-DEBUG: false
 ALLOWED_HOSTS:
-  -
-WSGI_APPLICATION: ""
+                - "*"
+WSGI_APPLICATION: "settings.wsgi.application"
+DEBUG: true
