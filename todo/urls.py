@@ -19,12 +19,13 @@ from django.urls import path
 from django.conf.urls import include
 from rest_framework.routers import DefaultRouter
 
-from authors.views import AuthorModelViewSet
+
+from participants.views import ParticipantModelViewSet
 from notes.views import NodeModelViewSet
 from projects.views import ProjectModelViewSet, DevelopmentModelViewSet
 
 router = DefaultRouter()
-router.register('authors', AuthorModelViewSet)
+router.register('participants', ParticipantModelViewSet)
 router.register('projects', ProjectModelViewSet)
 router.register('developments', DevelopmentModelViewSet)
 router.register('nodes', NodeModelViewSet)
