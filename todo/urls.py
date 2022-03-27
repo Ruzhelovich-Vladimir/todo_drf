@@ -19,19 +19,22 @@ from django.urls import path
 from django.conf.urls import include
 from rest_framework.routers import DefaultRouter
 
-from authors.views import AuthorModelViewSet
-from notes.views import NodeModelViewSet
+# from participants.views import ParticipantModelViewSets
+from notes.views import NoteMotelViewSet
 from projects.views import ProjectModelViewSet, DevelopmentModelViewSet
 
-router = DefaultRouter()
-router.register('authors', AuthorModelViewSet)
-router.register('projects', ProjectModelViewSet)
-router.register('developments', DevelopmentModelViewSet)
-router.register('nodes', NodeModelViewSet)
+# router = DefaultRouter()
+# # router.register('participants', ParticipantModelViewSet)
+# # router.register('projects', ProjectModelViewSet)
+# router.register('developments', DevelopmentModelViewSet)
+# router.register('nodes', NodeModelViewSet)
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
-    path('api/', include(router.urls)),
+    # path('api/', include(router.urls)),
+    path('nodes/', include('notes.urls')),
+    path('participants/', include('participants.urls')),
+    path('projects/', include('projects.urls'))
 ]
