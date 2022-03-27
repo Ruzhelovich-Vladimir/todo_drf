@@ -6,7 +6,7 @@ from participants.models import Participant
 from projects.models import Project
 
 
-class Node(models.Model):
+class Note(models.Model):
     """ Заметки """
     STATUS = [
         ('N', 'Новый'),

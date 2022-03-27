@@ -1,11 +1,11 @@
 from rest_framework.serializers import HyperlinkedModelSerializer
 
-from notes.models import Node
+from notes.models import Note
 
 
-class NodeModelSerializer(HyperlinkedModelSerializer):
+class NoteModelSerializer(HyperlinkedModelSerializer):
 
     class Meta:
 
-        model = Node
+        model = Note
         fields = '__all__'
