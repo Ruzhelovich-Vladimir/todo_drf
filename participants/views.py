@@ -61,7 +61,7 @@ class ParticipantModelViewSet(
         GenericViewSet):
 
     queryset = Participant.objects.all().filter(is_activate=True)
-    serializer_class = ParticipantHyperlinkedModelSerializer
+    serializer_class = ParticipantModelSerializer
 
     # def get_queryset(self):
     #
