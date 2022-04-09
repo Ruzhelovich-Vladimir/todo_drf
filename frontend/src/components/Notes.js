@@ -18,7 +18,8 @@ const NoteItem = ({item}) => {
 const NoteList = ({notes}) => {
 
     let { id } = useParams();
-    let filtered_items = notes.filter((item) => item.author.uid == id)
+    let filtered_items = id ? notes.filter((item) => item.author.uid == id) : notes
+
     return (
         <table border="1" >
             <th>Наименование</th>

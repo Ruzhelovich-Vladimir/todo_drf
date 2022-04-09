@@ -15,7 +15,8 @@ const Item = ({item}) => {
 const DevelopmentList = ({developments}) => {
 
     let { id } = useParams();
-    let filtered_items = developments.filter((item) => item.development.uid == id)
+
+    let filtered_items = id ? developments.filter((item) => item.development.uid == id): developments
 
     return (
         <table border="1" >
