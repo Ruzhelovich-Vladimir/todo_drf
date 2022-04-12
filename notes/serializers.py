@@ -1,11 +1,15 @@
-from rest_framework.serializers import HyperlinkedModelSerializer
+from rest_framework.serializers import HyperlinkedModelSerializer, ModelSerializer
 
-from notes.models import Node
+from notes.models import Note
+from participants.serializers import ParticipantModelSerializer
+from projects.serializers import ProjectModelSerializer
 
 
-class NodeModelSerializer(HyperlinkedModelSerializer):
+class NoteModelSerializer(ModelSerializer):
+    project = ProjectModelSerializer()
+    author = ParticipantModelSerializer()
 
     class Meta:
 
-        model = Node
+        model = Note
         fields = '__all__'

@@ -18,20 +18,27 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 from rest_framework.routers import DefaultRouter
+from projects.views import DevelopmentModelViewSet
 
-from authors.views import AuthorModelViewSet
-from notes.views import NodeModelViewSet
-from projects.views import ProjectModelViewSet, DevelopmentModelViewSet
+# from participants.views import ParticipantModelViewSets
+# from notes.views import NoteMotelViewSet
+# from projects.views import ProjectModelViewSet, DevelopmentModelViewSet
 
 router = DefaultRouter()
-router.register('authors', AuthorModelViewSet)
-router.register('projects', ProjectModelViewSet)
-router.register('developments', DevelopmentModelViewSet)
-router.register('nodes', NodeModelViewSet)
+# router.register('notes/', include('notes.urls'))
+# router.register('participants/', include('participants.urls'))
+# router.register('projects/', include('projects.urls'))
+router.register('', DevelopmentModelViewSet)
+
+# router.register('nodes', NodeModelViewSet)
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
-    path('api/', include(router.urls)),
+    path('notes/', include('notes.urls')),
+    path('participants/', include('participants.urls')),
+    path('projects/', include('projects.urls')),
+    path('developments/', include(router.urls)),
 ]
